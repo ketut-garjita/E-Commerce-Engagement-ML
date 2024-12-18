@@ -229,30 +229,33 @@ kubectl apply -f service.yaml
 
 ## API Usage
 
-Endpoint
+- Endpoint
 
-POST /predict
+  POST /predict
 
-Input
+- Input
 
-A JSON payload containing the following field:
+  A JSON payload containing the following field:
 
-text: The tweet content.
+  text: The tweet content.
 
+  Example input:
 
-Example input:
-
-{
+  ```
+  {
   "text": "Diskon besar Ramadan di Tokopedia!"
-}
+  }
+  ```
 
-Output
+- Output
 
-The API returns a prediction:
+  The API returns a prediction:
 
-{
+  ```
+  {
   "prediction": [[256.78619384765625]]
-}
+  }
+  ```
 
 
 ---
@@ -265,7 +268,6 @@ Input: "Diskon besar Ramadan di Tokopedia!"
 Output: 256.78
 
 This score can be interpreted as the expected combination of likes, replies, and retweets.
-
 
 ---
 
@@ -287,7 +289,6 @@ Ketut Garjita
 ## License
 
 This project is licensed under the MIT License.
-
 
 ---
 
