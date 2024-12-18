@@ -101,7 +101,7 @@ Steps:
 2. Use TensorFlow Serving to serve the model.
 3. Create a Flask API to send input to TensorFlow Serving and return predictions.
 
----8
+---
 
 ## Deployment Architecture
 
