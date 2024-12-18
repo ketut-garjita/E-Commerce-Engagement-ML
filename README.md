@@ -109,25 +109,25 @@ The project follows a microservices deployment architecture:
 
 1. Model Deployment
 
-The trained Keras model is exported to TensorFlow SavedModel format.
+   The trained Keras model is exported to TensorFlow SavedModel format.
 
-TensorFlow Serving hosts the model and provides an endpoint for predictions.
+   TensorFlow Serving hosts the model and provides an endpoint for predictions.
 
 2. API Deployment
 
-A Flask application sends requests to TensorFlow Serving and returns predictions to clients.
+   A Flask application sends requests to TensorFlow Serving and returns predictions to clients.
 
-The Flask app is containerized using Docker.
+   The Flask app is containerized using Docker.
 
 3. Kubernetes Orchestration
 
-Both the TensorFlow Serving container and the Flask API container are orchestrated using Kubernetes.
+   Both the TensorFlow Serving container and the Flask API container are orchestrated using Kubernetes.
 
-Kubernetes is deployed locally (minikube) or in AWS EKS for scalability.
+   Kubernetes is deployed locally (minikube) or in AWS EKS for scalability.
 
 4. AWS EKS Deployment
 
-Use AWS Elastic Kubernetes Service (EKS) for production-level deployment and scaling.
+   Use AWS Elastic Kubernetes Service (EKS) for production-level deployment and scaling.
 
 ---
 
@@ -149,31 +149,31 @@ Ensure you have the following installed:
 
 1. Model Training and Saving
 
-  Run the model training script and save the model in TensorFlow SavedModel format:
+   Run the model training script and save the model in TensorFlow SavedModel format:
 
-  ```
-  python train_model.py
-  ```
+   ```
+   python train_model.py
+   ```
 
 2. Run TensorFlow Serving
 
-  Build the Docker container with TensorFlow Serving:
+   Build the Docker container with TensorFlow Serving:
 
-  ```
-  docker run -p 8501:8501 --name tf-serving-engagement \
-    -v /path/to/saved_model:/models/engagement_model \
-    -e MODEL_NAME=engagement_model \
-    tensorflow/serving
-  ```
+   ```
+   docker run -p 8501:8501 --name tf-serving-engagement \
+     -v /path/to/saved_model:/models/engagement_model \
+     -e MODEL_NAME=engagement_model \
+     tensorflow/serving
+   ```
 
 3. Run Flask API
 
-  Build and run the Flask API Docker container:
+   Build and run the Flask API Docker container:
 
-  ```
-  docker build -t engagement-api .
-  docker run -p 5000:5000 engagement-api
-  ```
+   ```
+   docker build -t engagement-api .
+   docker run -p 5000:5000 engagement-api
+   ```
 
 4. Deploy with Kubernetes
 
@@ -213,14 +213,12 @@ Ensure you have the following installed:
 5. AWS EKS Deployment
 
    - Configure AWS CLI and EKS:
-
      ```
      aws configure
      eksctl create cluster --name engagement-cluster --region your-region
      ```
 
    - Deploy containers to AWS:
-
      ```
      kubectl apply -f deployment.yaml
      kubectl apply -f service.yaml
