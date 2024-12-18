@@ -222,7 +222,7 @@ Ensure you have the following installed:
      ```
      kubectl apply -f deployment.yaml
      kubectl apply -f service.yaml
-    ```
+     ```
 
 ---
 
