@@ -1,6 +1,7 @@
-# E-Commerce Engagement Prediction Model
 **Machine Learning**
+# E-Commerce Engagement Prediction Model
 
+---
 
 ## Project Overview
 
@@ -8,6 +9,7 @@ This project aims to predict the engagement of tweets related to Tokopedia. Enga
 
 The project implements TensorFlow Serving, Kubernetes, Docker, and AWS Kubernetes (EKS) for efficient model deployment ⁷and scalability.
 
+---
 
 ## Table of Contents
 
@@ -39,6 +41,7 @@ The project implements TensorFlow Serving, Kubernetes, Docker, and AWS Kubernete
 
 - Acknowledgments
 
+---
 
 ## Features and Target
 
@@ -62,6 +65,7 @@ Containerize the application using Docker.
 
 Orchestrate the deployment using Kubernetes and scale it on AWS EKS for production-level deployment.
 
+---
 
 ## Technologies Used
 
@@ -74,7 +78,7 @@ The project integrates the following technologies:
 5. Kubernetes: Orchestrates containers for scaling and deployment.
 6. AWS EKS: Managed Kubernetes service for deployment in the cloud.
 
-
+--- 
 ## Dataset
 
 The dataset consists of tweets about Tokopedia and their associated engagement metrics. Each data point includes:
@@ -86,6 +90,7 @@ Preprocessing includes:
 - Text cleaning: Removing punctuation, special characters, and links.
 - Tokenization: Splitting text into tokens.
 
+---
 
 ## Model
 
@@ -96,6 +101,7 @@ Steps:
 2. Use TensorFlow Serving to serve the model.
 3. Create a Flask API to send input to TensorFlow Serving and return predictions.
 
+---8
 
 ## Deployment Architecture
 
@@ -123,6 +129,7 @@ Kubernetes is deployed locally (minikube) or in AWS EKS for scalability.
 
 Use AWS Elastic Kubernetes Service (EKS) for production-level deployment and scaling.
 
+---
 
 ## How to Run the Project
 
@@ -217,6 +224,7 @@ kubectl apply -f service.yaml
   kubectl apply -f service.yaml
   ```
 
+---
 
 ## API Usage
 
