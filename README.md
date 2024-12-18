@@ -139,7 +139,7 @@ Ensure you have the following installed:
 
 - Python 3.10+
 - Kaggle account and local authorization setup
-- AWS account and local CLI setup
+- AWS account and local authorization & CLI setup
 - TensorFlow/Keras
 - Docker
 - Kubernetes (Minikube or AWS EKS)
