@@ -149,82 +149,82 @@ Ensure you have the following installed:
 
 1. Model Training and Saving
 
-Run the model training script and save the model in TensorFlow SavedModel format:
+  Run the model training script and save the model in TensorFlow SavedModel format:
 
-```
-python train_model.py
-```
+  ```
+  python train_model.py
+  ```
 
 2. Run TensorFlow Serving
 
-Build the Docker container with TensorFlow Serving:
+  Build the Docker container with TensorFlow Serving:
 
-```
-docker run -p 8501:8501 --name tf-serving-engagement \
+  ```
+  docker run -p 8501:8501 --name tf-serving-engagement \
     -v /path/to/saved_model:/models/engagement_model \
     -e MODEL_NAME=engagement_model \
     tensorflow/serving
-```
+  ```
 
 3. Run Flask API
 
-Build and run the Flask API Docker container:
+  Build and run the Flask API Docker container:
 
-```
-docker build -t engagement-api .
-docker run -p 5000:5000 engagement-api
-```
+  ```
+  docker build -t engagement-api .
+  docker run -p 5000:5000 engagement-api
+  ```
 
 4. Deploy with Kubernetes
 
-Create deployment and service files:
+   Create deployment and service files:
 
-deployment.yaml
+   deployment.yaml
 
-```
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: engagement-api
-spec:
-  replicas: 2
-  selector:
-    matchLabels:
-      app: engagement-api
-  template:
-    metadata:
-      labels:
+   ```
+   apiVersion: apps/v1
+   kind: Deployment
+   metadata:
+     name: engagement-api
+   spec:
+     replicas: 2
+   selector:
+      matchLabels:
         app: engagement-api
-    spec:
-      containers:
-      - name: engagement-api
-        image: your-flask-api-image:latest
-        ports:
-        - containerPort: 5000
-```
+    template:
+      metadata:
+        labels:
+          app: engagement-api
+      spec:
+        containers:
+        - name: engagement-api
+          image: your-flask-api-image:latest
+          ports:
+          - containerPort: 5000
+   ```
 
-Deploy to Kubernetes:
+   Deploy to Kubernetes:
 
-```
-kubectl apply -f deployment.yaml
-kubectl apply -f service.yaml
-```
+   ```
+   kubectl apply -f deployment.yaml
+   kubectl apply -f service.yaml
+   ```
 
 5. AWS EKS Deployment
 
-- Configure AWS CLI and EKS:
+   - Configure AWS CLI and EKS:
 
-  ```
-  aws configure
-  eksctl create cluster --name engagement-cluster --region your-region
-  ```
+     ```
+     aws configure
+     eksctl create cluster --name engagement-cluster --region your-region
+     ```
 
-- Deploy containers to AWS:
+   - Deploy containers to AWS:
 
-  ```
-  kubectl apply -f deployment.yaml
-  kubectl apply -f service.yaml
-  ```
+     ```
+     kubectl apply -f deployment.yaml
+     kubectl apply -f service.yaml
+    ```
 
 ---
 
