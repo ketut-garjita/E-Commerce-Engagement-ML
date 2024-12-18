@@ -5,7 +5,7 @@
 
 ## Project Overview
 
-This project aims to predict the engagement of tweets related to Tokopedia. Engagement is defined as a combination of likes, replies, and retweets. The model processes input text (preprocessed tweets) and hashtag information to output an engagement score that reflects the potential audience interaction.
+This project aims to predict the engagement of tweets related to several e-commerce companies. Engagement is defined as a combination of likes, replies, and retweets. The model processes input text (preprocessed tweets) and hashtag information to output an engagement score that reflects the potential audience interaction.
 
 The project implements TensorFlow Serving, Kubernetes, Docker, and AWS Kubernetes (EKS) for efficient model deployment ⁷and scalability.
 
@@ -138,7 +138,8 @@ Use AWS Elastic Kubernetes Service (EKS) for production-level deployment and sca
 Ensure you have the following installed:
 
 - Python 3.10+
-- Kaggle account and setup on server
+- Kaggle account and local authorization setup
+- AWS account and local CLI setup
 - TensorFlow/Keras
 - Docker
 - Kubernetes (Minikube or AWS EKS)
