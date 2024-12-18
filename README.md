@@ -138,6 +138,7 @@ Use AWS Elastic Kubernetes Service (EKS) for production-level deployment and sca
 Ensure you have the following installed:
 
 - Python 3.10+
+- Kaggle account and setup on server
 - TensorFlow/Keras
 - Docker
 - Kubernetes (Minikube or AWS EKS)
