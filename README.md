@@ -37,10 +37,6 @@ The project implements TensorFlow Serving, Kubernetes, Docker, and AWS Kubernete
 
 - Future Improvements
 
-- Contributors
-
-- License
-
 - Acknowledgments
 
 ---
@@ -83,7 +79,17 @@ The project integrates the following technologies:
 --- 
 ## Dataset
 
-The dataset consists of tweets about Tokopedia and their associated engagement metrics. Each data point includes:
+Dataset link **Indonesia's Top E-Commerce Tweets**:
+
+[https://www.kaggle.com/datasets/robertvici/indonesia-top-ecommerce-unicorn-tweets](https://www.kaggle.com/datasets/robertvici/indonesia-top-ecommerce-unicorn-tweets)
+
+![image](https://github.com/user-attachments/assets/2c78b971-45d7-4932-889c-b3df9b48b856)
+
+**About Dataset**
+
+This dataset contains the tweets from the first tweet until April 2020 of top e-commerce unicorn in Indonesia namely Shopee, Tokopedia, Bukalapak, Lazada and Blibli.
+
+The dataset consists of tweets about an associated engagement metrics. Each data point includes:
 - Tweet text
 - Number of hashtags
 - Engagement value (target)
@@ -307,22 +313,10 @@ This score can be interpreted as the expected combination of likes, replies, and
 
 ---
 
-## Contributors
-
-Ketut Garjita
-
----
-
-## License
-
-This project is licensed under the MIT License.
-
----
-
 ## Acknowledgments
 
 Tools: TensorFlow Serving, Flask, Docker, Kubernetes, AWS EKS.
 
-Data: Tokopedia tweet datasets.
+Data: [Indonesia's Top E-Commerce Tweets](https://www.kaggle.com/datasets/robertvici/indonesia-top-ecommerce-unicorn-tweets)
 
 ---
