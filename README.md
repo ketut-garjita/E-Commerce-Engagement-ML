@@ -79,9 +79,15 @@ The project integrates the following technologies:
 --- 
 ## Dataset
 
-Dataset link **Indonesia's Top E-Commerce Tweets**:
+Dataset header:
+
+**Indonesia's Top E-Commerce Tweets**
+
+Dataset link:
 
 [https://www.kaggle.com/datasets/robertvici/indonesia-top-ecommerce-unicorn-tweets](https://www.kaggle.com/datasets/robertvici/indonesia-top-ecommerce-unicorn-tweets)
+
+Dataset content: 
 
 ![image](https://github.com/user-attachments/assets/2c78b971-45d7-4932-889c-b3df9b48b856)
 
