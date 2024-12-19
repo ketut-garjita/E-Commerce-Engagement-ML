@@ -1,4 +1,4 @@
-**Machine Learning**
+**Machine Learning - Zoomcamp**
 # E-Commerce Engagement Prediction Model
 
 ---
