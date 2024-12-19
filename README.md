@@ -69,12 +69,14 @@ Orchestrate the deployment using Kubernetes and scale it on AWS EKS for producti
 
 The project integrates the following technologies:
 
-1. TensorFlow: For building and saving the deep learning model.
-2. Flask: To create an API for serving predictions.
-3. Docker: Containerizes the Flask API and TensorFlow model.
-4. TensorFlow Serving: Optimized model serving for real-time predictions.
-5. Kubernetes: Orchestrates containers for scaling and deployment.
-6. AWS EKS: Managed Kubernetes service for deployment in the cloud.
+1. HDFS: Saving data
+2. Pyspark: Data processing
+3. TensorFlow: For building and saving the deep learning model.
+4. Flask: To create an API for serving predictions.
+5. Docker: Containerizes the Flask API and TensorFlow model.
+6. TensorFlow Serving: Optimized model serving for real-time predictions.
+7. Kubernetes: Orchestrates containers for scaling and deployment.
+8. AWS EKS: Managed Kubernetes service for deployment in the cloud.
 
 --- 
 ## Dataset
@@ -317,7 +319,7 @@ This score can be interpreted as the expected combination of likes, replies, and
 
 ## Acknowledgments
 
-Tools: TensorFlow Serving, Flask, Docker, Kubernetes, AWS EKS.
+Tools: HDFS, Pyspark, Numpy, TensorFlow Serving, Flask, Docker, Kubernetes, AWS EKS.
 
 Data: [Indonesia's Top E-Commerce Tweets](https://www.kaggle.com/datasets/robertvici/indonesia-top-ecommerce-unicorn-tweets)
 
