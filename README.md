@@ -170,7 +170,7 @@ Ensure you have the following installed:
 - AWS account and local authorization & CLI setup
 - TensorFlow/Keras
 - Docker
-- Kubernetes (Minikube or AWS EKS)
+- Kubernetes
 - kubectl
 
 ### Steps
