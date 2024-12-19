@@ -107,6 +107,7 @@ Steps:
 
 ## Repositiry Structures
 
+   ```
    ├── README.md                                 # Documentation for the project
    ├── build-docker-image.txt                    # Build docker and run container script 
    ├── deployment.yaml                           # Kubernetes deployment yaml script
@@ -126,6 +127,7 @@ Steps:
    ├── tokenizer.pkl                            # Tokenizer output
    ├── train_model.py                           # Model train script 
    └── train_model.ipynb                        # Model train script (notebook)
+   ```
 
 ---
 
