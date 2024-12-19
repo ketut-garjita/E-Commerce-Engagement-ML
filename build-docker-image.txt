@@ -1,0 +1,2 @@
+docker build -t e-commerce-engagement-model .
+docker run -p 8501:8501 --name e-commerce-engagement e-commerce-engagement-model
