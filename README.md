@@ -105,7 +105,7 @@ Steps:
 
 ---
 
-## Repositiry Structures
+## Repository Structures
 
    ```
    ├── README.md                                 # Documentation for the project
