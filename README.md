@@ -24,6 +24,8 @@ The project implements TensorFlow Serving, Kubernetes, Docker, and AWS Kubernete
 - Dataset
 
 - Model
+  
+- Repositiry Structures
 
 - Deployment Architecture
 
