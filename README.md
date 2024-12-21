@@ -108,7 +108,7 @@ Preprocessing includes:
 
 ## Tasks Flow
 
-Model deployment of TensorFlow Serving eith Kubernetes and AWS EKS.
+Model deployment of TensorFlow Serving on Kubernetes and AWS EKS.
 
 ```mermaid
 graph TD
