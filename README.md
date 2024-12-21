@@ -287,14 +287,14 @@ Ensure you have the following installed:
    ./curl-kube.sh
    ```   
 
-10. Deploy TensorFlow Serving on AWS EKS
+9. Deploy TensorFlow Serving on AWS EKS
 
-   - Authenticate Docker to AWS ECR, use the AWS CLI to authenticate Docker client
+  - Authenticate Docker to AWS ECR, use the AWS CLI to authenticate Docker client
      ```
      aws ecr get-login-password --region ap-southeast-3 | docker login --username AWS --password-stdin 734800375959.dkr.ecr.ap-southeast-3.amazonaws.com
      ```
      
-   - Create repository
+  - Create repository
      ```
      aws ecr create-repository --repository-name e-commerce-engagement-model
      ```
@@ -323,19 +323,19 @@ Ensure you have the following installed:
       --nodes 2 \
       --node-type t3.medium \
       --managed
-    
-   - Deploy containers to AWS:
+    ```
+    - Deploy containers to AWS:
      ```
      kubectl apply -f eks-deployment.yaml
      kubectl apply -f eks-service.yaml
      ```
      
-   - Check nodes
+    - Check nodes
      ```
      kubectl get nodes
      ```
      
-   - Checl all  status (pod, services, deployment)
+    - Checl all  status (pod, services, deployment)
      ```
      kubectl get all
      ```
