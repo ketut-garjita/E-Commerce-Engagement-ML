@@ -270,7 +270,7 @@ Ensure you have the following installed:
    ```
 
 6. Deploy TensorFlow Serving on Kubernetes
-   - Apply deployment adn service
+   - Apply deployment and service
      ```
      kind load docker-image e-commerce-engagement-model:latest
      kubectl apply -f kube-deployment.yaml
