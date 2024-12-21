@@ -113,13 +113,13 @@ Model deployment of TensorFlow Serving eith Kubernetes and AWS EKS.
 ```mermaid
 graph TD
     A((python
-train_model.py)) --> B((docker
+train_model.py)) --> | saved_model | B((docker
 build))
-    B --> C((docker
+    B --> | docker images | C((docker
 run))
-    C --> D1[apply to 
+    C --> D1[TS Serving on 
 Kubernetes]
-    C --> D2[apply to 
+    C --> D2[TS Serving on
 AWS EKS]
     
     D1 --> E1((create
