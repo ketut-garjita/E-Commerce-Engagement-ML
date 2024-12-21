@@ -125,7 +125,7 @@ on AWS EKS]
     D1 --> E1((deploy
 TensorFlow Serving
 on Kubernetes))
-    E1 --> | pod service deployment
+    E1 --> | pod,service,deployment
 running | F1((expose
 TensorFlow Serving API))
     F1 --> G1((test 
@@ -139,7 +139,7 @@ AWS EKS Cluster))
     F2 --> G2((deploy 
 TensorFlow Serving
 on EKS))
-    G2 --> | pod service deployment
+    G2 --> | pod,service,deployment
 running | H2((expose
 API with LoadBalancer))
     H2 --> I2((test 
