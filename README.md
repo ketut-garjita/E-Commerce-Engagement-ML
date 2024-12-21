@@ -23,6 +23,8 @@ The project implements TensorFlow Serving, Kubernetes, Docker, and AWS Kubernete
 
 - Dataset
 
+- Tasks Flow
+
 - Model
   
 - Repositiry Structures
@@ -103,6 +105,16 @@ Preprocessing includes:
 - Tokenization: Splitting text into tokens.
 
 ---
+
+## Tasks Flow
+
+```
+graph TD
+    A --> B --> C
+    Source1[External Source 1] --> B
+    Source2[External Source 2] --> C
+```
+
 
 ## Model
 
