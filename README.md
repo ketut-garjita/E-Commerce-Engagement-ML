@@ -149,10 +149,8 @@ kube-deployment.yaml --> E1
 kube-service.yaml --> E1
 eks-deploymeny.yaml --> G2
 eks-service.yaml --> G2
-pod . service .
-deployment --> F1
-pod .service .
-deployment --> H2
+pod service.deployment --> F1
+pod.service.deployment --> H2
 ```
 
 
