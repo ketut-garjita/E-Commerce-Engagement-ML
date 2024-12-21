@@ -171,6 +171,40 @@ graph TD
 ```
 
 ```mermaid
+graph TD
+    A((python
+train_model.py)) --> B((build
+docker image))
+    B --> C((run
+container))
+    C --> D1((apply to 
+Kubernetes))
+    C --> D2((apply to 
+AWS EKS))
+    
+    D1 --> E1((create
+Kubernetes deployment))
+    E1 --> F1((expose
+TensorFlow Serving API))
+    F1 --> G1((test 
+model inference
+via API))
+
+    D2 --> E2((push
+image to ECR))
+    E2 --> F2((create
+AWS EKS Cluster))
+    F2 --> G2((deploy 
+TensorFlow Serving
+on EKS))
+    G2 --> H2((expose
+API with LoadBalancer))
+    H2 --> I2((test 
+model inference
+via API))
+```
+
+```mermaid
    graph TD
 A[yfinance] --> | yf.download | B((data))
 B --> | ticker | C[ADRO.JK]
