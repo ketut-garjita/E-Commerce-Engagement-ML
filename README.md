@@ -108,67 +108,7 @@ Preprocessing includes:
 
 ## Tasks Flow
 
-```mermaid
-   graph LR
-    A((python
-train_model.py)) --> B((build
-docker image))
-    B --> C((run
-container))
-    train_model.py --> A
-    Dockerfile --> B
-```
-
-```mermaid
-graph TD
-    A((python
-train_model.py)) --> B((build
-docker image))
-    B --> C((run
-container))
-    train_model.py --> A
-    Dockerfile --> B
-    C --> D((push
-image to ECR))
-    D --> E((deploy 
-TensorFlow Serving
-on Kubernetes))
-    E --> F((create
-AWS EKS Cluster))
-    F --> G((deploy 
-Kubernetes manifest
-to EKS))
-    G --> H((TensorFlow
-Serving API
-ready))
-    H --> I((test 
-model inference
-via API))
-```
-
-```mermaid
-graph TD
-    A((python
-    train_model.py)) --> B((build
-    docker image))
-    B --> C((run
-    container))
-    train_model.py --> A
-    Dockerfile --> B
-    C --> D((push to AWS ECR))
-    D --> E((deploy to AWS EKS))
-    E --> F((configure
-    TensorFlow Serving))
-    F --> G((create Kubernetes
-    Deployment))
-    G --> H((create Kubernetes
-    Service))
-    H --> I((setup
-    Ingress))
-    I --> J((configure
-    Autoscaling))
-    J --> K((monitor & log))
-```
+Model deployment of TensorFlow Serving eith Kubernetes and AWS EKS.
 
 ```mermaid
 graph TD
