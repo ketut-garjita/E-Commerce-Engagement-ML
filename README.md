@@ -119,7 +119,7 @@ container))
     Dockerfile --> B
 ```
 
-```
+```mermaid
 graph LR
     A((python
 train_model.py)) --> B((build
