@@ -279,9 +279,14 @@ Ensure you have the following installed:
    ```
 
 7. Deploy TensorFlow Serving on Kubernetes
-   - Apply deployment and service
+
+   - Register docker image with kind
      ```
      kind load docker-image e-commerce-engagement-model:latest
+     ```
+     
+   - Apply deployment and service
+     ```
      kubectl apply -f kube-deployment.yaml
      kubectl apply -f kube-service.yaml
      ```
@@ -299,7 +304,7 @@ Ensure you have the following installed:
      ./curl-kube.sh
      ```   
 
-8. Deploy TensorFlow Serving on AWS EKS
+9. Deploy TensorFlow Serving on AWS EKS
    - Authenticate Docker to AWS ECR, use the AWS CLI to authenticate Docker client
        ```
        aws ecr get-login-password --region ap-southeast-3 | docker login --username AWS --password-stdin 734800375959.dkr.ecr.ap-southeast-3.amazonaws.com
