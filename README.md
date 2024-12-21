@@ -125,8 +125,7 @@ on AWS EKS]
     D1 --> E1((deploy
 TensorFlow Serving
 on Kubernetes))
-    E1 --> | pod service d
-eployment | F1((expose
+    E1 --> | pod service deployment | F1((expose
 TensorFlow Serving API))
     F1 --> G1((test 
 model inference
