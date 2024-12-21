@@ -147,6 +147,30 @@ via API))
 ```
 
 ```mermaid
+graph LR
+    A((python
+    train_model.py)) --> B((build
+    docker image))
+    B --> C((run
+    container))
+    train_model.py --> A
+    Dockerfile --> B
+    C --> D((push to AWS ECR))
+    D --> E((deploy to AWS EKS))
+    E --> F((configure
+    TensorFlow Serving))
+    F --> G((create Kubernetes
+    Deployment))
+    G --> H((create Kubernetes
+    Service))
+    H --> I((setup
+    Ingress))
+    I --> J((configure
+    Autoscaling))
+    J --> K((monitor & log))
+```
+
+```mermaid
    graph TD
 A[yfinance] --> | yf.download | B((data))
 B --> | ticker | C[ADRO.JK]
