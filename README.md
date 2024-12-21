@@ -176,13 +176,13 @@ Steps:
    │   ├── eks-service.yaml
    ├── src                                       # Code (python scripts)
    │   ├── train_model.py
-   │   ├── predict_mdeol.py
+   │   ├── predict_model.py
    │   ├── notebook.ipynb
    │   ├── EDA.ipynb
    ├── build-docker-image.md                     # Build docker and run container commands 
    ├── kubectl-apply.md                          # Kubernetes deployment and service commands
    ├── Dockerfile                                # Instructions to containerize the application
-   ├── saved_model                               # Final model saved
+   ├── saved_model                               # Final saved model
    │   ├── assets
    │   ├── fingerprint.pb
    │   ├── saved_model.pb
@@ -213,9 +213,9 @@ The project follows a microservices deployment architecture:
 
 3. Kubernetes Orchestration
 
-   Both the TensorFlow Serving container and the Flask API container are orchestrated using Kubernetes.
+   The TensorFlow Serving container is orchestrated using Kubernetes.
 
-   Kubernetes is deployed locally (minikube) or in AWS EKS for scalability.
+   Kubernetes is deployed locally or in AWS EKS for scalability.
 
 4. AWS EKS Deployment
 
@@ -236,6 +236,7 @@ Ensure you have the following installed:
 - Docker
 - Kubernetes
 - kubectl
+- kind
 
 ### Steps
 
