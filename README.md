@@ -147,7 +147,7 @@ via API))
 ```
 
 ```mermaid
-graph LR
+graph TD
     A((python
     train_model.py)) --> B((build
     docker image))
