@@ -110,8 +110,11 @@ Preprocessing includes:
 
 ```mermaid
    graph LR
-    A((python train_model.py)) --> B((build docker image))
-    B --> C((run container))
+    A((python
+train_model.py)) --> B((build
+docker image))
+    B --> C((run
+container))
     train_model.py --> A
     Dockerfile --> B
 ```
