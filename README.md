@@ -122,8 +122,9 @@ on Kubernetes]
     C --> D2[TensorFlow Serving 
 on AWS EKS]
     
-    D1 --> E1((create
-Kubernetes deployment))
+    D1 --> E1((deploy
+TensorFlow Serving
+on Kubernetes))
     E1 --> F1((expose
 TensorFlow Serving API))
     F1 --> G1((test 
