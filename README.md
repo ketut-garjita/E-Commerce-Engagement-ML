@@ -268,53 +268,53 @@ Ensure you have the following installed:
    ```
 
 6. Deploy TensorFlow Serving on Kubernetes
-   ```
-   kind load docker-image e-commerce-engagement-model:latest
-   kubectl apply -f kube-deployment.yaml
-   kubectl apply -f kube-service.yaml
-   ```
+   - Apply deployment adn service
+     ```
+     kind load docker-image e-commerce-engagement-model:latest
+     kubectl apply -f kube-deployment.yaml
+     kubectl apply -f kube-service.yaml
+     ```
 
-7. kubectl (get pod, services, all)
-   ```
-   kubectl get pods
-   kubectl get services
-   kubectl get all
-   ```  
-   The pod should be Ready (1/1) and Status (Running).
+  - kubectl (get pods, services, all)
+     ```
+     kubectl get pods
+     kubectl get services
+     kubectl get all
+     ```  
+     The pod should be Ready (1/1) and Status (Running).
 
-8. Test TensorFlow Serving Model Prediction (server port 5002:8501)
-   ```
-   ./curl-kube.sh
-   ```   
+  - Test TensorFlow Serving Model Prediction (server port 5002:8501)
+     ```
+     ./curl-kube.sh
+     ```   
 
-9. Deploy TensorFlow Serving on AWS EKS
-  
-    - Authenticate Docker to AWS ECR, use the AWS CLI to authenticate Docker client
+7. Deploy TensorFlow Serving on AWS EKS
+   - Authenticate Docker to AWS ECR, use the AWS CLI to authenticate Docker client
        ```
        aws ecr get-login-password --region ap-southeast-3 | docker login --username AWS --password-stdin 734800375959.dkr.ecr.ap-southeast-3.amazonaws.com
        ```
        
-    - Create repository
+   - Create repository
        ```
        aws ecr create-repository --repository-name e-commerce-engagement-model
        ```
        
-    - Tag image to AWS
+   - Tag image to AWS
       ```
       docker tag e-commerce-engagement-model 734800375959.dkr.ecr.ap-southeast-3.amazonaws.com/e-commerce-engagement-model:latest
       ```
       
-    - Push image
+   - Push image
       ```
       docker push 734800375959.dkr.ecr.ap-southeast-3.amazonaws.com/e-commerce-engagement-model:latest
       ```
       
-    - Configure AWS CLI and EKS
+   - Configure AWS CLI and EKS
       ```
       aws configure
       ```
       
-    - Create AWS EKS Cluster
+   - Create AWS EKS Cluster
       ```
       eksctl create cluster \
         --name tf-serving-cluster \
@@ -324,18 +324,18 @@ Ensure you have the following installed:
         --node-type t3.medium \
         --managed
       ```
-      - Deploy containers to AWS:
+   - Deploy containers to AWS:
        ```
        kubectl apply -f eks-deployment.yaml
        kubectl apply -f eks-service.yaml
        ```
        
-      - Check nodes
+    - Check nodes
        ```
        kubectl get nodes
        ```
        
-      - Checl all  status (pod, services, deployment)
+    - Checl all  status (pod, services, deployment)
        ```
        kubectl get all
        ```
