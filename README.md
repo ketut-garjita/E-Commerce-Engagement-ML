@@ -167,12 +167,19 @@ Steps:
 
    ```
    ├── README.md                                 # Documentation for the project
+   ├── config
+   │   ├── kube-deployment.yaml
+   │   ├── kube-service.yaml
+   │   ├── eks-deployment.yaml
+   │   ├── eks-service.yaml
+   ├── src
+   │   ├── train_model.py
+   │   ├── predict_mdeol.py
+   │   ├── 
+   │   ├── 
    ├── build-docker-image.txt                    # Build docker and run container script 
-   ├── deployment.yaml                           # Kubernetes deployment yaml script
    ├── deploy-on-kubernetes.txt                  # Script to create kubernetes deployment and services
    ├── Dockerfile                                # Instructions to containerize the application
-   ├── engagement_model.keras                    # Keras model
-   ├── predict_model.py                          # Model predict script 
    ├── saved_model                               # Final model saved
    │   ├── assets
    │   ├── fingerprint.pb
@@ -180,11 +187,9 @@ Steps:
    │   └── variables
    │       ├── variables.data-00000-of-00001
    │       └── variables.index
-   ├── service.yaml                             # Kubernetes services yaml script
-   ├── TensorFlow Serving Deployment.ipynb      # Notebook -  Tensorflow Serving (notebook)
+   ├── notebook.ipynb                           # Data preparation, EDA
    ├── tokenizer.pkl                            # Tokenizer output
-   ├── train_model.py                           # Model train script 
-   └── train_model.ipynb                        # Model train script (notebook)
+
    ```
 
 ---
