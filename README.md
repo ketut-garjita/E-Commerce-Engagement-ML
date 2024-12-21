@@ -324,7 +324,7 @@ Ensure you have the following installed:
         --node-type t3.medium \
         --managed
       ```
-   - Deploy containers to AWS:
+   - Deploy container to AWS:
        ```
        kubectl apply -f eks-deployment.yaml
        kubectl apply -f eks-service.yaml
@@ -358,7 +358,7 @@ Ensure you have the following installed:
 
   ```
   {
-  "text": "Diskon besar Ramadan di Tokopedia!"
+  "text": "Diskon besar Ramadhan di Tokopedia!"
   }
   ```
 
