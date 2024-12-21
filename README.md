@@ -253,23 +253,31 @@ Ensure you have the following installed:
    python src/train_model.py
    ```
 
-3. Test model prediction via API (server port 5000:5000)
+3. Start Flask API
+   ```
+   python src/predict_model.py
+   ```
+   
+4. Test model prediction via API (server port 5000:5000)
+
+   Open new terminal.
+   
    ```
    ./curl-api.sh
    ```
    
-4. Build Docker Images with TensorFlow Serving   
+5. Build Docker Images with TensorFlow Serving   
 
    ```
    docker build -t e-commerce-engagement-model .
    ```
 
-5. Create and Run Container
+6. Create and Run Container
    ```
    docker run -p 8501:8501 --name tensorflow-serving e-commerce-engagement-model
    ```
 
-6. Deploy TensorFlow Serving on Kubernetes
+7. Deploy TensorFlow Serving on Kubernetes
    - Apply deployment and service
      ```
      kind load docker-image e-commerce-engagement-model:latest
@@ -290,7 +298,7 @@ Ensure you have the following installed:
      ./curl-kube.sh
      ```   
 
-7. Deploy TensorFlow Serving on AWS EKS
+8. Deploy TensorFlow Serving on AWS EKS
    - Authenticate Docker to AWS ECR, use the AWS CLI to authenticate Docker client
        ```
        aws ecr get-login-password --region ap-southeast-3 | docker login --username AWS --password-stdin 734800375959.dkr.ecr.ap-southeast-3.amazonaws.com
@@ -337,7 +345,7 @@ Ensure you have the following installed:
        kubectl get nodes
        ```
        
-    - Checl all  status (pod, services, deployment)
+    - Check all status (pod, services, deployment)
        ```
        kubectl get all
        ```
