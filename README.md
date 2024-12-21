@@ -237,83 +237,109 @@ Ensure you have the following installed:
 
 ### Steps
 
-1. Model Training and Saving
+1. Clone this repository
+   ```
+   git clone https://github.com/ketut-garjita/E-Commerce-Engagement-ML.git
+   ```
+   
+2. Model Training and Saving
 
    Run the model training script and save the model in TensorFlow SavedModel format:
 
    ```
-   python train_model.py
+   cd E-Commerce-Engagement-ML
+   python src/train_model.py
    ```
 
-2. Run TensorFlow Serving
-
-   Build the Docker container with TensorFlow Serving:
+3. Test model prediction via API (server port 5000:5000)
+   ```
+   ./curl-api.sh
+   ```
+   
+4. Build Docker Images with TensorFlow Serving   
 
    ```
-   docker run -p 8501:8501 --name tf-serving-engagement \
-     -v /path/to/saved_model:/models/engagement_model \
-     -e MODEL_NAME=engagement_model \
-     tensorflow/serving
+   docker build -t e-commerce-engagement-model .
    ```
 
-3. Run Flask API
-
-   Build and run the Flask API Docker container:
-
+5. Create and Run Container
    ```
-   docker build -t engagement-api .
-   docker run -p 5000:5000 engagement-api
+   docker run -p 8501:8501 --name tensorflow-serving e-commerce-engagement-model
    ```
 
-4. Deploy with Kubernetes
-
-   Create deployment and service files:
-
-   deployment.yaml
-
+6. Deploy TensorFlow Serving on Kubernetes
    ```
-   apiVersion: apps/v1
-   kind: Deployment
-   metadata:
-     name: engagement-api
-   spec:
-     replicas: 2
-   selector:
-      matchLabels:
-        app: engagement-api
-    template:
-      metadata:
-        labels:
-          app: engagement-api
-      spec:
-        containers:
-        - name: engagement-api
-          image: your-flask-api-image:latest
-          ports:
-          - containerPort: 5000
+   kind load docker-image e-commerce-engagement-model:latest
+   kubectl apply -f kube-deployment.yaml
+   kubectl apply -f kube-service.yaml
    ```
 
-   Deploy to Kubernetes:
-
+7. kubectl (get pod, services, all)
    ```
-   kubectl apply -f deployment.yaml
-   kubectl apply -f service.yaml
+   kubectl get pods
+   kubectl get services
+   kubectl get all
+   ```  
+   The pod should be Ready (1/1) and Status (Running).
+
+8. Test TensorFlow Serving Model Prediction (server port 5002:8501)
    ```
+   ./curl-kube.sh
+   ```   
 
-5. AWS EKS Deployment
+10. Deploy TensorFlow Serving on AWS EKS
 
-   - Configure AWS CLI and EKS:
+   - Authenticate Docker to AWS ECR, use the AWS CLI to authenticate Docker client
      ```
-     aws configure
-     eksctl create cluster --name engagement-cluster --region your-region
+     aws ecr get-login-password --region ap-southeast-3 | docker login --username AWS --password-stdin 734800375959.dkr.ecr.ap-southeast-3.amazonaws.com
      ```
-
+     
+   - Create repository
+     ```
+     aws ecr create-repository --repository-name e-commerce-engagement-model
+     ```
+     
+  - Tag image to AWS
+    ```
+    docker tag e-commerce-engagement-model 734800375959.dkr.ecr.ap-southeast-3.amazonaws.com/e-commerce-engagement-model:latest
+    ```
+    
+  - Push image
+    ```
+    docker push 734800375959.dkr.ecr.ap-southeast-3.amazonaws.com/e-commerce-engagement-model:latest
+    ```
+    
+  - Configure AWS CLI and EKS
+    ```
+    aws configure
+    ```
+    
+  - Create AWS EKS Cluster
+    ```
+    eksctl create cluster \
+      --name tf-serving-cluster \
+      --region ap-southeast-3 \
+      --nodegroup-name tf-serving-nodes \
+      --nodes 2 \
+      --node-type t3.medium \
+      --managed
+    
    - Deploy containers to AWS:
      ```
-     kubectl apply -f deployment.yaml
-     kubectl apply -f service.yaml
+     kubectl apply -f eks-deployment.yaml
+     kubectl apply -f eks-service.yaml
      ```
-
+     
+   - Check nodes
+     ```
+     kubectl get nodes
+     ```
+     
+   - Checl all  status (pod, services, deployment)
+     ```
+     kubectl get all
+     ```
+     
 ---
 
 ## API Usage
