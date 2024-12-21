@@ -110,9 +110,10 @@ Preprocessing includes:
 
 ```mermaid
    graph TD
-    A --> B --> C
-    Input1 --> B
-    Input2 --> C
+    A[python train_model.py] --> B[build docker image]
+    B --> C[run container]
+    train_model.py --> A
+    Dockerfile --> B
 ```
 
 ```mermaid
