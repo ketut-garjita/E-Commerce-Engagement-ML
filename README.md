@@ -288,58 +288,58 @@ Ensure you have the following installed:
    ```   
 
 9. Deploy TensorFlow Serving on AWS EKS
-
-  - Authenticate Docker to AWS ECR, use the AWS CLI to authenticate Docker client
-     ```
-     aws ecr get-login-password --region ap-southeast-3 | docker login --username AWS --password-stdin 734800375959.dkr.ecr.ap-southeast-3.amazonaws.com
-     ```
-     
-  - Create repository
-     ```
-     aws ecr create-repository --repository-name e-commerce-engagement-model
-     ```
-     
-  - Tag image to AWS
-    ```
-    docker tag e-commerce-engagement-model 734800375959.dkr.ecr.ap-southeast-3.amazonaws.com/e-commerce-engagement-model:latest
-    ```
-    
-  - Push image
-    ```
-    docker push 734800375959.dkr.ecr.ap-southeast-3.amazonaws.com/e-commerce-engagement-model:latest
-    ```
-    
-  - Configure AWS CLI and EKS
-    ```
-    aws configure
-    ```
-    
-  - Create AWS EKS Cluster
-    ```
-    eksctl create cluster \
-      --name tf-serving-cluster \
-      --region ap-southeast-3 \
-      --nodegroup-name tf-serving-nodes \
-      --nodes 2 \
-      --node-type t3.medium \
-      --managed
-    ```
-    - Deploy containers to AWS:
-     ```
-     kubectl apply -f eks-deployment.yaml
-     kubectl apply -f eks-service.yaml
-     ```
-     
-    - Check nodes
-     ```
-     kubectl get nodes
-     ```
-     
-    - Checl all  status (pod, services, deployment)
-     ```
-     kubectl get all
-     ```
-     
+  
+    - Authenticate Docker to AWS ECR, use the AWS CLI to authenticate Docker client
+       ```
+       aws ecr get-login-password --region ap-southeast-3 | docker login --username AWS --password-stdin 734800375959.dkr.ecr.ap-southeast-3.amazonaws.com
+       ```
+       
+    - Create repository
+       ```
+       aws ecr create-repository --repository-name e-commerce-engagement-model
+       ```
+       
+    - Tag image to AWS
+      ```
+      docker tag e-commerce-engagement-model 734800375959.dkr.ecr.ap-southeast-3.amazonaws.com/e-commerce-engagement-model:latest
+      ```
+      
+    - Push image
+      ```
+      docker push 734800375959.dkr.ecr.ap-southeast-3.amazonaws.com/e-commerce-engagement-model:latest
+      ```
+      
+    - Configure AWS CLI and EKS
+      ```
+      aws configure
+      ```
+      
+    - Create AWS EKS Cluster
+      ```
+      eksctl create cluster \
+        --name tf-serving-cluster \
+        --region ap-southeast-3 \
+        --nodegroup-name tf-serving-nodes \
+        --nodes 2 \
+        --node-type t3.medium \
+        --managed
+      ```
+      - Deploy containers to AWS:
+       ```
+       kubectl apply -f eks-deployment.yaml
+       kubectl apply -f eks-service.yaml
+       ```
+       
+      - Check nodes
+       ```
+       kubectl get nodes
+       ```
+       
+      - Checl all  status (pod, services, deployment)
+       ```
+       kubectl get all
+       ```
+       
 ---
 
 ## API Usage
