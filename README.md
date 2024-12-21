@@ -151,41 +151,6 @@ eks-deploymeny.yaml --> G2
 eks-service.yaml --> G2
 ```
 
-```mermaid
-   graph TD
-A[yfinance] --> | yf.download | B((data))
-B --> | ticker | C[ADRO.JK]
-B --> | ticker | D[BBCA.JK]
-B --> | ticker | E[TLKM.JK]
-C --> | methodology | F[Random Forest]
-D --> | methodology | F[Random Forest]
-E --> | methodology | F[Random Forest]
-F --> | model | I[RandomForest_stock_models
-.pkl]
-I --> |predict | J[RandomForest_Predictions
-.json]
-```
-
-### LSTM (Long Short-Term Memory)
-```mermaid
-   graph TD
-A[yfinance] --> | yf.download | B((data))
-B --> | ticker | C[ADRO.JK]
-B --> | ticker | D[BBCA.JK]
-B --> | ticker | E[TLKM.JK]
-C --> | methodology | F[LSTM]
-D --> | methodology | G[LSTM]
-E --> | methodology | H[LSTM]
-F --> | model | I[LSTM_ADRO.JK.pkl]
-G --> | model | J[LSTM_BBCA.JK.pkl]
-H --> | model | K[LSTM_TLKM.JK.pkl]
-I --> | predict | L[LSTM_ADRO.JK
-prediction formats]
-J --> | predict | M[LSTM_BBCA.JK
-prediction formats]
-K --> | predict | N[LSTM_TLKM.JK
-prediction formats]
-```	 
 
 ## Model
 
