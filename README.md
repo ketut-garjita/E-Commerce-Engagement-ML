@@ -109,7 +109,7 @@ Preprocessing includes:
 ## Tasks Flow
 
 ```mermaid
-   graph RL
+   graph LR
     A((python train_model.py)) --> B((build docker image))
     B --> C((run container))
     train_model.py --> A
