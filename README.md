@@ -119,6 +119,33 @@ container))
     Dockerfile --> B
 ```
 
+```
+graph LR
+    A((python
+train_model.py)) --> B((build
+docker image))
+    B --> C((run
+container))
+    train_model.py --> A
+    Dockerfile --> B
+    C --> D((push
+image to ECR))
+    D --> E((deploy 
+TensorFlow Serving
+on Kubernetes))
+    E --> F((create
+AWS EKS Cluster))
+    F --> G((deploy 
+Kubernetes manifest
+to EKS))
+    G --> H((TensorFlow
+Serving API
+ready))
+    H --> I((test 
+model inference
+via API))
+```
+
 ```mermaid
    graph TD
 A[yfinance] --> | yf.download | B((data))
