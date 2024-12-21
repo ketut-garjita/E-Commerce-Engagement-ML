@@ -275,7 +275,7 @@ Ensure you have the following installed:
      kubectl apply -f kube-service.yaml
      ```
 
-  - kubectl (get pods, services, all)
+   - kubectl (get pods, services, all)
      ```
      kubectl get pods
      kubectl get services
@@ -283,7 +283,7 @@ Ensure you have the following installed:
      ```  
      The pod should be Ready (1/1) and Status (Running).
 
-  - Test TensorFlow Serving Model Prediction (server port 5002:8501)
+   - Test TensorFlow Serving Model Prediction (server port 5002:8501)
      ```
      ./curl-kube.sh
      ```   
