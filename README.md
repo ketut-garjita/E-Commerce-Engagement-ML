@@ -108,12 +108,12 @@ Preprocessing includes:
 
 ## Tasks Flow
 
-```
-graph TD
+```graph TD
     A --> B --> C
-    Source1[External Source 1] --> B
-    Source2[External Source 2] --> C
+    Input1 --> B
+    Input2 --> C
 ```
+
 
 
 ## Model
