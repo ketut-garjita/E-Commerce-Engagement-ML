@@ -167,18 +167,18 @@ Steps:
 
    ```
    ├── README.md                                 # Documentation for the project
-   ├── config
+   ├── config                                    # Configuration files
    │   ├── kube-deployment.yaml
    │   ├── kube-service.yaml
    │   ├── eks-deployment.yaml
    │   ├── eks-service.yaml
-   ├── src
+   ├── src                                       # Code (python scripts)
    │   ├── train_model.py
    │   ├── predict_mdeol.py
-   │   ├── 
-   │   ├── 
-   ├── build-docker-image.txt                    # Build docker and run container script 
-   ├── deploy-on-kubernetes.txt                  # Script to create kubernetes deployment and services
+   │   ├── notebook.ipynb
+   │   ├── EDA.ipynb
+   ├── build-docker-image.md                     # Build docker and run container commands 
+   ├── kubectl-apply.md                          # Kubernetes deployment and service commands
    ├── Dockerfile                                # Instructions to containerize the application
    ├── saved_model                               # Final model saved
    │   ├── assets
@@ -187,7 +187,6 @@ Steps:
    │   └── variables
    │       ├── variables.data-00000-of-00001
    │       └── variables.index
-   ├── notebook.ipynb                           # Data preparation, EDA
    ├── tokenizer.pkl                            # Tokenizer output
 
    ```
