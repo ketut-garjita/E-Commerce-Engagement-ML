@@ -117,10 +117,10 @@ train_model.py)) --> | saved_model | B((docker
 build))
     B --> | docker images | C((docker
 run))
-    C --> D1[TS Serving on 
-Kubernetes]
-    C --> D2[TS Serving on
-AWS EKS]
+    C --> D1[TensorFlow Serving 
+on Kubernetes]
+    C --> D2[TensorFlow Serving 
+on AWS EKS]
     
     D1 --> E1((create
 Kubernetes deployment))
