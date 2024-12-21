@@ -145,7 +145,10 @@ model inference
 via API))
 datasets --> A
 Dockerfile --> B
-
+kube-deployment.yaml --> E1
+kube-service.yaml --> E1
+eks-deploymeny.yaml --> G2
+eks-service.yaml --> G2
 ```
 
 ```mermaid
