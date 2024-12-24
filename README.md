@@ -277,8 +277,15 @@ Ensure you have the following installed:
    ```
    docker run -p 8501:8501 --name tensorflow-serving e-commerce-engagement-model
    ```
+   Optionally:
+   
+   Open new terminal
+   ```
+   stop tensorflow-serving
+   start tensorflow-serving
+   ```
 
-7. Deploy TensorFlow Serving on Kubernetes
+8. Deploy TensorFlow Serving on Kubernetes
 
    - Register docker image with kind
      ```
