@@ -182,7 +182,7 @@ Steps:
    ├── build-docker-image.md                  # Build docker and run container commands 
    ├── kubectl-apply.md                       # Kubernetes deployment and service commands
    ├── Dockerfile                             # Instructions to containerize the application
-   ├──  e-commerce-engagement_model.keras     # Saved machine learning model built with Keras, TensorFlow’s high-level API for building and training neural networks
+   ├── e-commerce-engagement_model.keras      # Saved machine learning model built with Keras, TensorFlow’s high-level API for building and training neural networks
    ├── saved_model                            # Final saved model for TensorFlow Serving
    │   ├── assets                             # Additional resources needed for inference.
    │   ├── fingerprint.pb                     # Metadata for version tracking.
