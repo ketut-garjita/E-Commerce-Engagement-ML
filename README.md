@@ -63,7 +63,7 @@ Deploy the model using TensorFlow Serving for real-time predictions.
 
 Containerize the application using Docker.
 
-Orchestrate the deployment using Kubernetes and scale it on AWS EKS for production-level deployment.
+Orchestrate the deployment using Kubernetes and scale it on Amazon EKS for production-level deployment.
 
 ---
 
@@ -78,7 +78,7 @@ The project integrates the following technologies:
 5. Docker: Containerizes the Flask API and TensorFlow model.
 6. TensorFlow Serving: Optimized model serving for real-time predictions.
 7. Kubernetes: Orchestrates containers for scaling and deployment.
-8. AWS EKS: Managed Kubernetes service for deployment in the cloud.
+8. Amazon EKS: Managed Kubernetes service for deployment in the cloud.
 
 --- 
 ## Dataset
@@ -108,7 +108,7 @@ Preprocessing includes:
 
 ## Tasks Flow
 
-Model deployment of TensorFlow Serving on Kubernetes and AWS EKS.
+Model deployment of TensorFlow Serving on Kubernetes and Amazon EKS.
 
 ```mermaid
 graph TD
@@ -120,7 +120,7 @@ run))
     C --> D1[TensorFlow Serving 
 on Kubernetes]
     C --> D2[TensorFlow Serving 
-on AWS EKS]
+on Amazon EKS]
     
     D1 --> E1((deploy
 TensorFlow Serving
@@ -135,7 +135,7 @@ via API))
     D2 --> E2((push
 image to ECR))
     E2 --> F2((create
-AWS EKS Cluster))
+Amazon EKS Cluster))
     F2 --> G2((deploy 
 TensorFlow Serving
 on EKS))
@@ -168,28 +168,29 @@ Steps:
 ## Repository Structures
 
    ```
-   ├── README.md                                 # Documentation for the project
-   ├── config                                    # Configuration files
-   │   ├── kube-deployment.yaml
-   │   ├── kube-service.yaml
-   │   ├── eks-deployment.yaml
-   │   ├── eks-service.yaml
-   ├── src                                       # Code (python scripts)
-   │   ├── train_model.py
-   │   ├── predict_model.py
-   │   ├── notebook.ipynb
-   │   ├── EDA.ipynb
-   ├── build-docker-image.md                     # Build docker and run container commands 
-   ├── kubectl-apply.md                          # Kubernetes deployment and service commands
-   ├── Dockerfile                                # Instructions to containerize the application
-   ├── saved_model                               # Final saved model
-   │   ├── assets
-   │   ├── fingerprint.pb
-   │   ├── saved_model.pb
-   │   └── variables
-   │       ├── variables.data-00000-of-00001
-   │       └── variables.index
-   ├── tokenizer.pkl                            # Tokenizer output
+   ├── README.md                              # Documentation for the project
+   ├── config                                 # Configuration files
+   │   ├── kube-deployment.yaml               # Kubernetes deployment configuration
+   │   ├── kube-service.yaml                  # Kubernetes service configuration
+   │   ├── eks-deployment.yaml                # Amazon EKS deployment configuration
+   │   ├── eks-service.yaml                   # Amazon EKS service configuration
+   ├── src                                    # Code (python scripts)
+   │   ├── train_model.py                     # train model
+   │   ├── predict_model.py                   # predict model non TensorFlow Serving
+   │   ├── notebook.ipynb                     # Notebook for testing data, showing schema, etc
+   │   ├── EDA.ipynb                          # Notebokk for Explatory Data Analisys
+   ├── build-docker-image.md                  # Build docker and run container commands 
+   ├── kubectl-apply.md                       # Kubernetes deployment and service commands
+   ├── Dockerfile                             # Instructions to containerize the application
+   ├──  e-commerce-engagement_model.keras     # Saved machine learning model built with Keras, TensorFlow’s high-level API for building and training neural networks
+   ├── saved_model                            # Final saved model for TensorFlow Serving
+   │   ├── assets                             # Additional resources needed for inference.
+   │   ├── fingerprint.pb                     # Metadata for version tracking.
+   │   ├── saved_model.pb                     # Model graph definition, including input-output signatures.
+   │   └── variables                          # Trained weights and biases.
+   │       ├── variables.data-00000-of-00001  # The actual numerical data for all the TensorFlow variables (e.g., weights, biases, etc.).
+   │       └── variables.index                # An index file that helps TensorFlow locate variables in the data file
+   ├── tokenizer.pkl                          # To store a pre-trained or pre-configured tokenizer.
 
    ```
 
@@ -215,9 +216,9 @@ The project follows a microservices deployment architecture:
 
    The TensorFlow Serving container is orchestrated using Kubernetes.
 
-   Kubernetes is deployed locally or in AWS EKS for scalability.
+   Kubernetes is deployed locally or in Amazon EKS for scalability.
 
-4. AWS EKS Deployment
+4. Amazon EKS Deployment
 
    Use AWS Elastic Kubernetes Service (EKS) for production-level deployment and scaling.
 
@@ -311,7 +312,7 @@ Ensure you have the following installed:
      ./curl-kube.sh
      ```   
 
-9. Deploy TensorFlow Serving on AWS EKS
+9. Deploy TensorFlow Serving on Amazon EKS
    - Authenticate Docker to AWS ECR, use the AWS CLI to authenticate Docker client
        ```
        aws ecr get-login-password --region ap-southeast-3 | docker login --username AWS --password-stdin 734800375959.dkr.ecr.ap-southeast-3.amazonaws.com
@@ -337,7 +338,7 @@ Ensure you have the following installed:
       aws configure
       ```
       
-   - Create AWS EKS Cluster
+   - Create Amazon EKS Cluster
       ```
       eksctl create cluster \
         --name tf-serving-cluster \
@@ -420,7 +421,7 @@ This score can be interpreted as the expected combination of likes, replies, and
 
 ## Acknowledgments
 
-Tools: HDFS, Pyspark, Numpy, TensorFlow Serving, Flask, Docker, Kubernetes, AWS EKS.
+Tools: HDFS, Pyspark, Numpy, TensorFlow Serving, Flask, Docker, Kubernetes, Amazon EKS.
 
 Data: [Indonesia's Top E-Commerce Tweets](https://www.kaggle.com/datasets/robertvici/indonesia-top-ecommerce-unicorn-tweets)
 
