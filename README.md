@@ -295,8 +295,8 @@ Ensure you have the following installed:
      
    - Apply deployment and service
      ```
-     kubectl apply -f kube-deployment.yaml
-     kubectl apply -f kube-service.yaml
+     kubectl apply -f config/kube-deployment.yaml
+     kubectl apply -f config/kube-service.yaml
      ```
 
    - kubectl (get pods, services, all)
@@ -350,8 +350,8 @@ Ensure you have the following installed:
       ```
    - Deploy container to AWS:
        ```
-       kubectl apply -f eks-deployment.yaml
-       kubectl apply -f eks-service.yaml
+       kubectl apply -f config/eks-deployment.yaml
+       kubectl apply -f config/eks-service.yaml
        ```
        
     - Check nodes
