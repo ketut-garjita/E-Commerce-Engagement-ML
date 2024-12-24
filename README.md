@@ -283,7 +283,7 @@ Ensure you have the following installed:
    Open new terminal
    ```
    docker stop tensorflow-serving
-   docker  start tensorflow-serving
+   docker start tensorflow-serving
    ```
 
 8. Deploy TensorFlow Serving on Kubernetes
